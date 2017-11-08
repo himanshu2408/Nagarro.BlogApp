@@ -1,3 +1,10 @@
-<p>
-  base works!
-</p>
+<app-navbar [categories]="categories"></app-navbar>
+<div class="home row">
+  <div class="col s5 offset-s1">
+    <app-favourite-blogs [blogs]="blogs"></app-favourite-blogs>
+  </div>
+  <div class="col s4 offset-s1">
+    <app-edit-blog [categories]="categories"></app-edit-blog>
+  </div>
+</div>
+<app-footer></app-footer>

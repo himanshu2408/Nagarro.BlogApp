@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BlogService} from '../blog.service';
 
 @Component({
   selector: 'app-base',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BaseComponent implements OnInit {
 
-  constructor() { }
+  links: {
+    home: ["/home"],
+    about: ["/about"]
+  };
+  blogs: Object [];
+  categories: Object [];
+  constructor(private blogService: BlogService) { }
 
   ngOnInit() {
+    this.blogService.loadCategories()
+      .subscribe((categories) => {
+        this.categories = categories;
+        console.log(this.categories);
+      });
+    this.blogService.loadBlogs()
+      .subscribe((blogs) => {
+        this.blogs = blogs;
+        console.log(this.blogs);
+      });
   }
 
 }
