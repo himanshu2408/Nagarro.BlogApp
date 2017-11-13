@@ -1,4 +1,5 @@
-<div class="row blog-card" *ngFor="let blog of blogs" (click)="selectBlog(blog)">
+<input type="text" [(ngModel)]="searchText">
+<div class="row blog-card" *ngFor="let blog of blogs | search: searchText" (click)="selectBlog(blog)">
   <div class="col s12">
     <div class="card blue-grey darken-1">
       <div class="card-content white-text">
