@@ -1,6 +1,3 @@
-<ul id='categories' class='dropdown-content'>
-  <li *ngFor="let category of categories"><a href="#!">{{category.name}}</a></li>
-</ul>
 <ul id='ratings' class='dropdown-content'>
   <li><a href="#!">1</a></li>
   <li><a href="#!">2</a></li>
@@ -13,18 +10,39 @@
   <form class="col s12">
     <div class="row">
       <div class="input-field col s12">
-        <input type="text" class="validate">
+        <input type="text" class="validate" #title placeholder="Blog title goes here">
         <label>Blog Title</label>
       </div>
       <div class="input-field col s12">
-        <textarea class="materialize-textarea"></textarea>
+        <textarea class="materialize-textarea" #desc placeholder="Blog desc goes here"></textarea>
         <label>Blog Description</label>
       </div>
       <div class="input-field col s12">
-        <input type="text" class="validate">
+        <input type="text" class="validate" #author placeholder="Author name goes here">
         <label>Author Name</label>
       </div>
-
+      <div class="input-field col s6">
+      <select #category>
+        <option value="" disabled selected>Choose an option</option>
+        <option *ngFor="let category of categories" value="{{category.name}}">{{category.name}}</option>
+      </select>
+      <label>Category</label>
+    </div>
+      <div class="input-field col s6">
+        <select #rating>
+          <option value="" disabled selected>Choose an option</option>
+          <option *ngFor="let rating of ratings" value="{{rating}}">{{rating}}</option>
+        </select>
+        <label>Rating</label>
+      </div>
+      <!--<div class="col s12">
+        <div class="col s6">
+          Category: <a class='dropdown-button btn' href='#' data-activates='categories'>Category</a>
+        </div>
+        <div class="col s6">
+          Rating: <a class='dropdown-button btn' href='#' data-activates='ratings'>Rating</a>
+        </div>
+      </div>-->
       <div class="col s12">
         <a class="waves-effect waves-light btn center">Save</a>
       </div>

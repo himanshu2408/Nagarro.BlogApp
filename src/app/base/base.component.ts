@@ -14,6 +14,7 @@ export class BaseComponent implements OnInit {
   };
   blogs: Object [];
   categories: Object [];
+  selectedBlog = null;
   constructor(private blogService: BlogService) { }
 
   ngOnInit() {
@@ -28,5 +29,8 @@ export class BaseComponent implements OnInit {
         console.log(this.blogs);
       });
   }
-
+  selectBlog(blog) {
+    this.selectedBlog = blog;
+    console.log(this.selectedBlog);
+  }
 }
