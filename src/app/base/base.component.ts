@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BlogService} from '../blog.service';
+import {AuthenticationService} from '../authentication.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-base',
@@ -15,7 +17,7 @@ export class BaseComponent implements OnInit {
   /*blogs: Object [];
   categories: Object [];
   selectedBlog = null;*/
-  constructor(protected blogService: BlogService) {
+  constructor(protected blogService: BlogService, private auth: AuthenticationService, private router: Router) {
     this.blogService.loadCategories()
       .subscribe((categories) => {
         this.blogService.categories = categories;
@@ -24,6 +26,10 @@ export class BaseComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (localStorage.getItem('user') == null) {
+      console.log(localStorage.getItem('user'));
+      this.router.navigate(['/']);
+    }
     this.blogService.loadBlogs()
       .subscribe((blogs) => {
         this.blogService.blogs = blogs;
