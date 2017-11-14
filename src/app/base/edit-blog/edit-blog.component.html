@@ -10,41 +10,26 @@
   <form class="col s12">
     <div class="row">
       <div class="input-field col s12">
-        <input type="text" class="validate" #title placeholder="Blog title goes here">
+        <input type="text" class="validate" name="title" [(ngModel)]="blog.title" placeholder="Blog title goes here">
         <label>Blog Title</label>
       </div>
       <div class="input-field col s12">
-        <textarea class="materialize-textarea" #desc placeholder="Blog desc goes here"></textarea>
+        <textarea class="materialize-textarea" name="desc" [(ngModel)]="blog.desc" placeholder="Blog desc goes here"></textarea>
         <label>Blog Description</label>
       </div>
       <div class="input-field col s12">
-        <input type="text" class="validate" #author placeholder="Author name goes here">
+        <input type="text" class="validate" name="authorId" [(ngModel)]="blog.authorId" placeholder="Author name goes here">
         <label>Author Name</label>
       </div>
-      <div class="input-field col s6">
-      <select #category>
-        <option value="" disabled selected>Choose an option</option>
-        <option *ngFor="let category of categories" value="{{category.name}}">{{category.name}}</option>
-      </select>
-      <label>Category</label>
-    </div>
-      <div class="input-field col s6">
-        <select #rating>
+      <div class="input-field col s6" *ngIf="categories != null">
+        <select #category>
           <option value="" disabled selected>Choose an option</option>
-          <option *ngFor="let rating of ratings" value="{{rating}}">{{rating}}</option>
+          <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
         </select>
-        <label>Rating</label>
+        <label>Category</label>
       </div>
-      <!--<div class="col s12">
-        <div class="col s6">
-          Category: <a class='dropdown-button btn' href='#' data-activates='categories'>Category</a>
-        </div>
-        <div class="col s6">
-          Rating: <a class='dropdown-button btn' href='#' data-activates='ratings'>Rating</a>
-        </div>
-      </div>-->
       <div class="col s12">
-        <a class="waves-effect waves-light btn center">Save</a>
+        <a class="waves-effect waves-light btn center"(click)="save()">Save</a>
       </div>
     </div>
   </form>
