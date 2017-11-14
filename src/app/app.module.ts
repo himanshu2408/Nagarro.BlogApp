@@ -16,6 +16,7 @@ import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import { NotFoundComponent } from './base/not-found/not-found.component';
 import { LoginComponent } from './base/login/login.component';
+import { SearchPipe } from './search.pipe';
 
 const approutes = [
   {path: '', component: BaseComponent, children: [
@@ -40,7 +41,8 @@ const approutes = [
     AllBlogsComponent,
     EditBlogComponent,
     NotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

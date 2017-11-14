@@ -25,7 +25,7 @@ export class EditBlogComponent implements OnInit, DoCheck {
     });
   }
   ngDoCheck() {
-    console.log(this.blog);
+    //console.log(this.blog);
     if (this.blog != null) {
       this.title.nativeElement.value = this.blog.title;
       this.desc.nativeElement.value = this.blog.desc;
