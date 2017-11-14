@@ -4,36 +4,32 @@
       "id": 1,
       "title": "first blog",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer viverra ex a dignissim bibendum. Fusce at lobortis sapien, a sollicitudin dui. Sed ut massa ornare ligula vehicula hendrerit ut tincidunt mi. Pellentesque sit amet tortor ullamcorper sem tincidunt porttitor a id lorem. Ut egestas tortor a enim bibendum, quis laoreet orci finibus. Phasellus at urna ultricies, placerat dolor et, sodales turpis. Donec pretium ante eget neque egestas fermentum. In venenatis orci metus, eget blandit enim vehicula at. In nulla libero, ultricies ac viverra consectetur, vehicula a orci. Vivamus vitae lectus est. Sed vestibulum, sem sed faucibus eleifend, tellus purus luctus neque, ac rhoncus magna metus id enim. Ut velit orci, interdum tristique turpis at, tincidunt venenatis risus. Nam vel cursus diam.<br><br>In ac dolor vel massa auctor blandit. Donec ac consectetur nunc. Vivamus vel odio tempor velit aliquam ullamcorper. Duis iaculis venenatis lorem, vitae vehicula velit tristique eget. Suspendisse leo magna, dignissim vitae nulla vitae, lobortis venenatis dui. Vivamus at massa ac leo porta scelerisque et a lectus. Sed nec scelerisque neque. Vivamus dui ante, tempor vel finibus ultricies, posuere at velit. Duis iaculis nibh lectus, et accumsan augue mattis vel. Nam nec dapibus ipsum. Integer egestas est sit amet ullamcorper feugiat. Etiam dolor sapien, tincidunt id nisl nec, porttitor molestie sem.<br><br>Aliquam felis justo, vestibulum eget massa vel, maximus elementum quam. In hac habitasse platea dictumst. Proin consectetur pretium dolor. Donec vitae tempor massa. Morbi ullamcorper tristique est, pellentesque viverra massa rutrum egestas. Sed nec tristique ligula. Nullam semper ac tortor non dapibus. Vivamus volutpat sit amet dui ac iaculis.<br><br>Ut accumsan ex dolor. Mauris non pellentesque dui, in ornare massa. Aenean a faucibus magna. Sed in tempor quam. Nunc eget erat vel ligula condimentum pulvinar. Sed bibendum nibh vel gravida iaculis. Fusce fringilla lobortis tortor, at imperdiet tortor commodo vel. Mauris nec ipsum sit amet ante semper vehicula sit amet et lacus. Praesent auctor turpis in elit sodales, eu sodales ex tristique. Maecenas ex elit, maximus in nisl quis, consectetur tempus mauris. Nam vestibulum interdum rhoncus. Morbi pretium auctor lacus, non iaculis arcu ullamcorper eu. Phasellus quis diam a libero facilisis rhoncus eget in nunc. Ut nibh tellus, suscipit at ex et, elementum feugiat risus. Nulla eget facilisis neque. Ut ligula velit, pellentesque eu viverra at, dictum ac lectus.",
-      "author": "himanshu",
+      "authorId": 1,
       "categoryId": 2,
-      "rating": 5,
       "date": "14/04/15"
     },
     {
       "id": 2,
       "title": "sec blog",
       "desc": "sit amet, consectetur adipiscing elit. Integer viverra ex a dignissim bibendum. Fusce at lobortis sapien, a sollicitudin dui. Sed ut massa ornare ligula vehicula hendrerit ut tincidunt mi. Pellentesque sit amet tortor ullamcorper sem tincidunt porttitor a id lorem. Ut egestas tortor a enim bibendum, quis laoreet orci finibus. Phasellus at urna ultricies, placerat dolor et, sodales turpis. Donec pretium ante eget neque egestas fermentum. In venenatis orci metus, eget blandit enim vehicula at. In nulla libero, ultricies ac viverra consectetur, vehicula a orci. Vivamus vitae lectus est. Sed vestibulum, sem sed faucibus eleifend, tellus purus luctus neque, ac rhoncus magna metus id enim. Ut velit orci, interdum tristique turpis at, tincidunt venenatis risus. Nam vel cursus diam.<br><br>In ac dolor vel massa auctor blandit. Donec ac consectetur nunc. Vivamus vel odio tempor velit aliquam ullamcorper. Duis iaculis venenatis lorem, vitae vehicula velit tristique eget. Suspendisse leo magna, dignissim vitae nulla vitae, lobortis venenatis dui. Vivamus at massa ac leo porta scelerisque et a lectus. Sed nec scelerisque neque. Vivamus dui ante, tempor vel finibus ultricies, posuere at velit. Duis iaculis nibh lectus, et accumsan augue mattis vel. Nam nec dapibus ipsum. Integer egestas est sit amet ullamcorper feugiat. Etiam dolor sapien, tincidunt id nisl nec, porttitor molestie sem.<br><br>Aliquam felis justo, vestibulum eget massa vel, maximus elementum quam. In hac habitasse platea dictumst. Proin consectetur pretium dolor. Donec vitae tempor massa. Morbi ullamcorper tristique est, pellentesque viverra massa rutrum egestas. Sed nec tristique ligula. Nullam semper ac tortor non dapibus. Vivamus volutpat sit amet dui ac iaculis.<br><br>Ut accumsan ex dolor. Mauris non pellentesque dui, in ornare massa. Aenean a faucibus magna. Sed in tempor quam. Nunc eget erat vel ligula condimentum pulvinar. Sed bibendum nibh vel gravida iaculis. Fusce fringilla lobortis tortor, at imperdiet tortor commodo vel. Mauris nec ipsum sit amet ante semper vehicula sit amet et lacus. Praesent auctor turpis in elit sodales, eu sodales ex tristique. Maecenas ex elit, maximus in nisl quis, consectetur tempus mauris. Nam vestibulum interdum rhoncus. Morbi pretium auctor lacus, non iaculis arcu ullamcorper eu. Phasellus quis diam a libero facilisis rhoncus eget in nunc. Ut nibh tellus, suscipit at ex et, elementum feugiat risus. Nulla eget facilisis neque. Ut ligula velit, pellentesque eu viverra at, dictum ac lectus.",
-      "author": "himan",
+      "authorId": 2,
       "categoryId": 1,
-      "rating": 4,
       "date": "05/11/16"
     },
     {
       "id": 3,
       "title": "third blog",
       "desc": "onsectetur adipiscing elit. Integer viverra ex a dignissim bibendum. Fusce at lobortis sapien, a sollicitudin dui. Sed ut massa ornare ligula vehicula hendrerit ut tincidunt mi. Pellentesque sit amet tortor ullamcorper sem tincidunt porttitor a id lorem. Ut egestas tortor a enim bibendum, quis laoreet orci finibus. Phasellus at urna ultricies, placerat dolor et, sodales turpis. Donec pretium ante eget neque egestas fermentum. In venenatis orci metus, eget blandit enim vehicula at. In nulla libero, ultricies ac viverra consectetur, vehicula a orci. Vivamus vitae lectus est. Sed vestibulum, sem sed faucibus eleifend, tellus purus luctus neque, ac rhoncus magna metus id enim. Ut velit orci, interdum tristique turpis at, tincidunt venenatis risus. Nam vel cursus diam.<br><br>In ac dolor vel massa auctor blandit. Donec ac consectetur nunc. Vivamus vel odio tempor velit aliquam ullamcorper. Duis iaculis venenatis lorem, vitae vehicula velit tristique eget. Suspendisse leo magna, dignissim vitae nulla vitae, lobortis venenatis dui. Vivamus at massa ac leo porta scelerisque et a lectus. Sed nec scelerisque neque. Vivamus dui ante, tempor vel finibus ultricies, posuere at velit. Duis iaculis nibh lectus, et accumsan augue mattis vel. Nam nec dapibus ipsum. Integer egestas est sit amet ullamcorper feugiat. Etiam dolor sapien, tincidunt id nisl nec, porttitor molestie sem.<br><br>Aliquam felis justo, vestibulum eget massa vel, maximus elementum quam. In hac habitasse platea dictumst. Proin consectetur pretium dolor. Donec vitae tempor massa. Morbi ullamcorper tristique est, pellentesque viverra massa rutrum egestas. Sed nec tristique ligula. Nullam semper ac tortor non dapibus. Vivamus volutpat sit amet dui ac iaculis.<br><br>Ut accumsan ex dolor. Mauris non pellentesque dui, in ornare massa. Aenean a faucibus magna. Sed in tempor quam. Nunc eget erat vel ligula condimentum pulvinar. Sed bibendum nibh vel gravida iaculis. Fusce fringilla lobortis tortor, at imperdiet tortor commodo vel. Mauris nec ipsum sit amet ante semper vehicula sit amet et lacus. Praesent auctor turpis in elit sodales, eu sodales ex tristique. Maecenas ex elit, maximus in nisl quis, consectetur tempus mauris. Nam vestibulum interdum rhoncus. Morbi pretium auctor lacus, non iaculis arcu ullamcorper eu. Phasellus quis diam a libero facilisis rhoncus eget in nunc. Ut nibh tellus, suscipit at ex et, elementum feugiat risus. Nulla eget facilisis neque. Ut ligula velit, pellentesque eu viverra at, dictum ac lectus.",
-      "author": "dim",
+      "authorId": 3,
       "categoryId": 3,
-      "rating": 5,
       "date": "15/01/12"
     },
     {
       "id": 4,
       "title": "fourth blog",
       "desc": "Integer viverra ex a dignissim bibendum. Fusce at lobortis sapien, a sollicitudin dui. Sed ut massa ornare ligula vehicula hendrerit ut tincidunt mi. Pellentesque sit amet tortor ullamcorper sem tincidunt porttitor a id lorem. Ut egestas tortor a enim bibendum, quis laoreet orci finibus. Phasellus at urna ultricies, placerat dolor et, sodales turpis. Donec pretium ante eget neque egestas fermentum. In venenatis orci metus, eget blandit enim vehicula at. In nulla libero, ultricies ac viverra consectetur, vehicula a orci. Vivamus vitae lectus est. Sed vestibulum, sem sed faucibus eleifend, tellus purus luctus neque, ac rhoncus magna metus id enim. Ut velit orci, interdum tristique turpis at, tincidunt venenatis risus. Nam vel cursus diam.<br><br>In ac dolor vel massa auctor blandit. Donec ac consectetur nunc. Vivamus vel odio tempor velit aliquam ullamcorper. Duis iaculis venenatis lorem, vitae vehicula velit tristique eget. Suspendisse leo magna, dignissim vitae nulla vitae, lobortis venenatis dui. Vivamus at massa ac leo porta scelerisque et a lectus. Sed nec scelerisque neque. Vivamus dui ante, tempor vel finibus ultricies, posuere at velit. Duis iaculis nibh lectus, et accumsan augue mattis vel. Nam nec dapibus ipsum. Integer egestas est sit amet ullamcorper feugiat. Etiam dolor sapien, tincidunt id nisl nec, porttitor molestie sem.<br><br>Aliquam felis justo, vestibulum eget massa vel, maximus elementum quam. In hac habitasse platea dictumst. Proin consectetur pretium dolor. Donec vitae tempor massa. Morbi ullamcorper tristique est, pellentesque viverra massa rutrum egestas. Sed nec tristique ligula. Nullam semper ac tortor non dapibus. Vivamus volutpat sit amet dui ac iaculis.<br><br>Ut accumsan ex dolor. Mauris non pellentesque dui, in ornare massa. Aenean a faucibus magna. Sed in tempor quam. Nunc eget erat vel ligula condimentum pulvinar. Sed bibendum nibh vel gravida iaculis. Fusce fringilla lobortis tortor, at imperdiet tortor commodo vel. Mauris nec ipsum sit amet ante semper vehicula sit amet et lacus. Praesent auctor turpis in elit sodales, eu sodales ex tristique. Maecenas ex elit, maximus in nisl quis, consectetur tempus mauris. Nam vestibulum interdum rhoncus. Morbi pretium auctor lacus, non iaculis arcu ullamcorper eu. Phasellus quis diam a libero facilisis rhoncus eget in nunc. Ut nibh tellus, suscipit at ex et, elementum feugiat risus. Nulla eget facilisis neque. Ut ligula velit, pellentesque eu viverra at, dictum ac lectus.",
-      "author": "him",
+      "authorId": 4,
       "categoryId": 4,
-      "rating": 3,
       "date": "12/09/17"
     }
   ],
@@ -57,6 +53,26 @@
     {
       "id": 5,
       "name": "Management"
+    }
+  ],
+  "users":[
+    {
+      "id":1,
+      "username":"him",
+      "password":"123",
+      "favourites": []
+    },
+    {
+      "id":2,
+      "username":"admin",
+      "password":"admin",
+      "favourites": []
+    },
+    {
+      "id":3,
+      "username":"vishrut",
+      "password":"pagal",
+      "favourites": []
     }
   ]
 }

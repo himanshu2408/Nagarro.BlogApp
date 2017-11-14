@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-favourite-blogs',
@@ -8,9 +8,13 @@ import {Component, Input, OnInit} from '@angular/core';
 export class FavouriteBlogsComponent implements OnInit {
 
   @Input() blogs;
+  @Output() notify: EventEmitter<Object> = new EventEmitter<Object>();
   constructor() { }
 
   ngOnInit() {
+  }
+  selectBlog(blog) {
+    this.notify.emit(blog);
   }
 
 }
