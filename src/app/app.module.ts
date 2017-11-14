@@ -17,6 +17,7 @@ import {RouterModule} from '@angular/router';
 import { NotFoundComponent } from './base/not-found/not-found.component';
 import { LoginComponent } from './base/login/login.component';
 import { SearchPipe } from './search.pipe';
+import {AuthenticationService} from './authentication.service';
 
 const approutes = [
   {path: '', component: BaseComponent, children: [
@@ -50,7 +51,7 @@ const approutes = [
     FormsModule,
     RouterModule.forRoot(approutes)
   ],
-  providers: [BlogService],
+  providers: [BlogService, AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
