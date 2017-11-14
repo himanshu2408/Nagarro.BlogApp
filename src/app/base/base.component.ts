@@ -15,14 +15,15 @@ export class BaseComponent implements OnInit {
   /*blogs: Object [];
   categories: Object [];
   selectedBlog = null;*/
-  constructor(protected blogService: BlogService) { }
-
-  ngOnInit() {
+  constructor(protected blogService: BlogService) {
     this.blogService.loadCategories()
       .subscribe((categories) => {
         this.blogService.categories = categories;
         console.log(this.blogService.categories);
       });
+  }
+
+  ngOnInit() {
     this.blogService.loadBlogs()
       .subscribe((blogs) => {
         this.blogService.blogs = blogs;

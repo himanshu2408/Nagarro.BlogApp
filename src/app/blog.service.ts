@@ -34,4 +34,11 @@ export class BlogService {
     this.selectedBlog = blog;
     this.select.emit(this.selectedBlog);
   }
+  addBlog(blog) {
+    return this.http.post(`${Base_URL}blogs`, blog, header)
+      .map(res => res.json())
+      .subscribe((newBlog) => {
+        this.blogs.push(newBlog);
+      });
+  }
 }
