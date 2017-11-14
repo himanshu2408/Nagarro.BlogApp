@@ -1,10 +1,12 @@
-<app-navbar [categories]="categories"></app-navbar>
+<app-navbar [categories]="blogService.categories"></app-navbar>
 <div class="home row">
   <div class="col s5 offset-s1">
-    <app-favourite-blogs [blogs]="blogs" (notify) = selectBlog($event)></app-favourite-blogs>
+    <app-all-blogs [blogs]="blogService.blogs" (notify) = selectBlog($event)></app-all-blogs>
   </div>
   <div class="col s4 offset-s1">
-    <app-edit-blog [categories]="categories" [blog]="selectedBlog"></app-edit-blog>
+    <!--<app-edit-blog [categories]="categories" [blog]="selectedBlog"></app-edit-blog>
+    <app-login></app-login>-->
+    <router-outlet></router-outlet>
   </div>
 </div>
 <app-footer></app-footer>

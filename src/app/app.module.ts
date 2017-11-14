@@ -7,18 +7,23 @@ import { NavbarComponent } from './base/navbar/navbar.component';
 import { FooterComponent } from './base/footer/footer.component';
 import { HomeComponent } from './base/home/home.component';
 import { BlogDetailComponent } from './base/blog-detail/blog-detail.component';
-import { FavouriteBlogsComponent } from './base/home/favourite-blogs/favourite-blogs.component';
-import { EditBlogComponent } from './base/home/edit-blog/edit-blog.component';
+import { AllBlogsComponent } from './base/all-blogs/all-blogs.component';
+import { EditBlogComponent } from './base/edit-blog/edit-blog.component';
 import {BlogService} from './blog.service';
 
 import {HttpModule} from '@angular/http';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import { NotFoundComponent } from './base/not-found/not-found.component';
+import { LoginComponent } from './base/login/login.component';
 
 const approutes = [
-  {path: "", redirectTo: 'home', pathMatch: 'full'},
-  {path: "home", component: BaseComponent},
+  {path: '', component: BaseComponent, children: [
+    { path: '', component: LoginComponent }
+  ]},
+  {path: "home", component: BaseComponent, children: [
+    { path: '', component:  EditBlogComponent}
+  ]},
   {path: "about", component: BaseComponent},
   {path: "**", component: NotFoundComponent}
 
@@ -32,9 +37,10 @@ const approutes = [
     FooterComponent,
     HomeComponent,
     BlogDetailComponent,
-    FavouriteBlogsComponent,
+    AllBlogsComponent,
     EditBlogComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

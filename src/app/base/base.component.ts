@@ -12,25 +12,24 @@ export class BaseComponent implements OnInit {
     home: ["/home"],
     about: ["/about"]
   };
-  blogs: Object [];
+  /*blogs: Object [];
   categories: Object [];
-  selectedBlog = null;
-  constructor(private blogService: BlogService) { }
+  selectedBlog = null;*/
+  constructor(protected blogService: BlogService) { }
 
   ngOnInit() {
     this.blogService.loadCategories()
       .subscribe((categories) => {
-        this.categories = categories;
-        console.log(this.categories);
+        this.blogService.categories = categories;
+        console.log(this.blogService.categories);
       });
     this.blogService.loadBlogs()
       .subscribe((blogs) => {
-        this.blogs = blogs;
-        console.log(this.blogs);
+        this.blogService.blogs = blogs;
+        console.log(this.blogService.blogs);
       });
   }
   selectBlog(blog) {
-    this.selectedBlog = blog;
-    console.log(this.selectedBlog);
+    this.blogService.selectBlog(blog);
   }
 }
