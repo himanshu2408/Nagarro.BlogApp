@@ -14,6 +14,7 @@ export class BaseComponent implements OnInit {
     home: ["/home"],
     about: ["/about"]
   };
+  filterCategoryId: number;
   /*blogs: Object [];
   categories: Object [];
   selectedBlog = null;*/
