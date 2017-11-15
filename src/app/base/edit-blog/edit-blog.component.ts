@@ -19,7 +19,7 @@ interface Blog {
 export class EditBlogComponent implements OnInit, DoCheck {
 
   categories = null;
-  blog: Blog = {
+  emptyBlog: Blog = {
     id: null,
     title: null,
     desc: null,
@@ -27,6 +27,7 @@ export class EditBlogComponent implements OnInit, DoCheck {
     categoryId: null,
     date: null
   };
+  blog: Blog = this.emptyBlog;
   @ViewChild('category') category;
   constructor(private blogService: BlogService) {
   }
@@ -55,5 +56,8 @@ export class EditBlogComponent implements OnInit, DoCheck {
   editBlog(blog) {
     blog.categoryId = Number(this.category.nativeElement.value);
     this.blogService.editBlog(blog);
+  }
+  resetForm() {
+    this.blog = this.emptyBlog;
   }
 }
