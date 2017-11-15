@@ -1,6 +1,6 @@
 import {Component, DoCheck, OnInit, ViewChild} from '@angular/core';
 import {BlogService} from '../../blog.service';
-import {el} from "@angular/platform-browser/testing/src/browser_util";
+import {AuthenticationService} from '../../authentication.service';
 
 interface Blog {
   id: number;
@@ -29,7 +29,7 @@ export class EditBlogComponent implements OnInit, DoCheck {
   };
   blog: Blog = this.emptyBlog;
   @ViewChild('category') category;
-  constructor(private blogService: BlogService) {
+  constructor(private blogService: BlogService, private auth: AuthenticationService) {
   }
 
   ngOnInit() {
@@ -55,6 +55,9 @@ export class EditBlogComponent implements OnInit, DoCheck {
   }
   editBlog(blog) {
     blog.categoryId = Number(this.category.nativeElement.value);
+    if (localStorage.getItem('user')) {
+      blog.authorId = JSON.parse(localStorage.getItem('user')).authorId;
+    }
     this.blogService.editBlog(blog);
   }
   resetForm() {

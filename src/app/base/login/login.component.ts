@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
       .subscribe((users) => {
         users.forEach(user => {
           if (user.username == this.user.username && user.password == this.user.password) {
-            localStorage.setItem('user', user);
-            this.auth.loggedInUser = user;
+            localStorage.setItem('user', JSON.stringify(user));
+            this.auth.loggedInUser = JSON.parse(localStorage.getItem('user'));
             this.router.navigate(['home']);
           }
         });

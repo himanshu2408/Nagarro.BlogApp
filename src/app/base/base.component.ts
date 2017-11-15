@@ -27,7 +27,6 @@ export class BaseComponent implements OnInit {
 
   ngOnInit() {
     if (localStorage.getItem('user') == null) {
-      console.log(localStorage.getItem('user'));
       this.router.navigate(['/']);
     }
     this.blogService.loadBlogs()

@@ -12,7 +12,7 @@ export class AuthenticationService {
   loggedInUser = null;
   constructor(private http: Http, private router: Router) {
     if (localStorage.getItem('user') != null) {
-      this.loggedInUser = localStorage.getItem('user');
+      this.loggedInUser = JSON.parse(localStorage.getItem('user'));
     }
   }
   login() {
