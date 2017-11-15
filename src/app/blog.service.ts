@@ -53,6 +53,18 @@ export class BlogService {
         console.log(updatedBlog);
       });
   }
+  deleteBlog(blog) {
+    return this.http.delete(`${Base_URL}blogs/${blog.id}`)
+      .map(res => res.json())
+      .subscribe((deletedBlog => {
+        for (let i = 0 ; i < this.blogs.length; i++) {
+          if (this.blogs[i]['id'] == blog.id) {
+            this.blogs.splice(i, 1);
+            break;
+          }
+        }
+      }));
+  }
   filterByCategory(categoryId) {
     this.filterByCategoryId = categoryId;
     this.filterByCategoryNotifier.emit(this.filterByCategoryId);

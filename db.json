@@ -47,30 +47,6 @@
       "authorId": 1,
       "categoryId": 2,
       "date": "14/04/15"
-    },
-    {
-      "id": 8,
-      "title": "newww",
-      "desc": "dsdvdsvfdvf",
-      "authorId": "him",
-      "categoryId": null,
-      "date": null
-    },
-    {
-      "id": 9,
-      "title": "abjaba",
-      "desc": "bsdhc",
-      "authorId": "himanshu",
-      "categoryId": "5",
-      "date": "Wed Nov 15 2017 14:47:33 GMT+0530 (India Standard Time)"
-    },
-    {
-      "id": 10,
-      "title": "tit",
-      "desc": "sdvfdv",
-      "authorId": "himanshu",
-      "categoryId": 5,
-      "date": "Wed Nov 15 2017 14:49:17 GMT+0530 (India Standard Time)"
     }
   ],
   "categories": [

@@ -22,5 +22,7 @@ export class AllBlogsComponent implements OnInit {
   selectBlog(blog) {
     this.notify.emit(blog);
   }
-
+  deleteBlog(blog) {
+    this.blogService.deleteBlog(blog);
+  }
 }
