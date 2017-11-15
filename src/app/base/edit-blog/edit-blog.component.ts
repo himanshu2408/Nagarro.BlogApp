@@ -1,4 +1,4 @@
-import {Component, DoCheck, Input, OnInit} from '@angular/core';
+import {Component, DoCheck, OnInit} from '@angular/core';
 import {BlogService} from '../../blog.service';
 
 interface Blog {

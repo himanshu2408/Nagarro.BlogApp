@@ -21,10 +21,14 @@
         <input type="text" class="validate" name="authorId" [(ngModel)]="blog.authorId" placeholder="Author name goes here">
         <label>Author Name</label>
       </div>
-      <div class="input-field col s6" *ngIf="categories != null">
+      <div class="input-field col s6">
         <select #category>
           <option value="" disabled selected>Choose an option</option>
-          <option *ngFor="let category of categories" value="{{category.id}}">{{category.name}}</option>
+          <option value="1">Cultural</option>
+          <option value="2">Technical</option>
+          <option value="3">Medical</option>
+          <option value="4">Social</option>
+          <option value="5">Others</option>
         </select>
         <label>Category</label>
       </div>
