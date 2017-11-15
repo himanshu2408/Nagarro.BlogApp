@@ -20,7 +20,9 @@ export class BlogService {
   blogs: Object [];
   categories: Object [];
   selectedBlog: Blog;
+  filterByCategoryId: number = null;
   select: EventEmitter<Object> = new EventEmitter<Object>();
+  filterByCategoryNotifier: EventEmitter<number> = new EventEmitter<number>();
   constructor(private http: Http) { }
   loadCategories() {
     return this.http.get(`${Base_URL}categories`)
@@ -40,5 +42,9 @@ export class BlogService {
       .subscribe((newBlog) => {
         this.blogs.push(newBlog);
       });
+  }
+  filterByCategory(categoryId) {
+    this.filterByCategoryId = categoryId;
+    this.filterByCategoryNotifier.emit(this.filterByCategoryId);
   }
 }

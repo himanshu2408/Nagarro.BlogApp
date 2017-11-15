@@ -18,6 +18,7 @@ import { NotFoundComponent } from './base/not-found/not-found.component';
 import { LoginComponent } from './base/login/login.component';
 import { SearchPipe } from './search.pipe';
 import {AuthenticationService} from './authentication.service';
+import { FilterByCategoryPipe } from './filter-by-category.pipe';
 
 const approutes = [
   {path: '', component: BaseComponent, children: [
@@ -43,7 +44,8 @@ const approutes = [
     EditBlogComponent,
     NotFoundComponent,
     LoginComponent,
-    SearchPipe
+    SearchPipe,
+    FilterByCategoryPipe
   ],
   imports: [
     BrowserModule,

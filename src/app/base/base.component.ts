@@ -14,7 +14,6 @@ export class BaseComponent implements OnInit {
     home: ["/home"],
     about: ["/about"]
   };
-  filterCategoryId: number;
   /*blogs: Object [];
   categories: Object [];
   selectedBlog = null;*/
@@ -39,5 +38,8 @@ export class BaseComponent implements OnInit {
   }
   selectBlog(blog) {
     this.blogService.selectBlog(blog);
+  }
+  filterByCategory(categoryId) {
+    this.blogService.filterByCategory(categoryId);
   }
 }

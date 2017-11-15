@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {AuthenticationService} from '../../authentication.service';
 
 @Component({
@@ -9,6 +9,7 @@ import {AuthenticationService} from '../../authentication.service';
 export class NavbarComponent implements OnInit {
 
   @Input() categories;
+  @Output() filterByCategoryNotify: EventEmitter<Object> = new EventEmitter<Object>();
   constructor(private auth: AuthenticationService) { }
 
   ngOnInit() {
@@ -18,5 +19,8 @@ export class NavbarComponent implements OnInit {
   }
   loggedIn(): Boolean {
     return this.auth.loggedInUser;
+  }
+  filterByCategories(categoryId) {
+    this.filterByCategoryNotify.emit(categoryId);
   }
 }

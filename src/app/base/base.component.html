@@ -1,4 +1,4 @@
-<app-navbar [categories]="blogService.categories"></app-navbar>
+<app-navbar [categories]="blogService.categories" (filterByCategoryNotify)="filterByCategory($event)"></app-navbar>
 <div class="home row">
   <div class="col s5 offset-s1">
     <app-all-blogs [blogs]="blogService.blogs" (notify) = selectBlog($event)></app-all-blogs>
