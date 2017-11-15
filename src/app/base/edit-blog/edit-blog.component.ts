@@ -1,5 +1,6 @@
-import {Component, DoCheck, OnInit} from '@angular/core';
+import {Component, DoCheck, OnInit, ViewChild} from '@angular/core';
 import {BlogService} from '../../blog.service';
+import {el} from "@angular/platform-browser/testing/src/browser_util";
 
 interface Blog {
   id: number;
@@ -26,12 +27,15 @@ export class EditBlogComponent implements OnInit, DoCheck {
     categoryId: null,
     date: null
   };
+  @ViewChild('category') category;
   constructor(private blogService: BlogService) {
   }
 
   ngOnInit() {
     this.blogService.select.subscribe((selectedBlog) => {
       this.blog = selectedBlog;
+      this.category.nativeElement.value = this.blog.categoryId;
+      console.log('cat val: ', this.category.nativeElement.value);
     });
   }
   ngDoCheck() {
@@ -40,9 +44,16 @@ export class EditBlogComponent implements OnInit, DoCheck {
   save() {
     if (this.blog.id == null) {
       this.addBlog(this.blog);
+    }else {
+      this.editBlog(this.blog);
     }
   }
   addBlog(blog) {
+    blog.categoryId = Number(this.category.nativeElement.value);
     this.blogService.addBlog(blog);
+  }
+  editBlog(blog) {
+    blog.categoryId = Number(this.category.nativeElement.value);
+    this.blogService.editBlog(blog);
   }
 }

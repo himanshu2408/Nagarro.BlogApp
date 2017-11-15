@@ -43,6 +43,16 @@ export class BlogService {
         this.blogs.push(newBlog);
       });
   }
+  editBlog(blog) {
+    blog.authorId = Number(blog.authorId);
+    blog.date = (new Date()).toString();
+    console.log('blog to be updated: ', blog)
+    return this.http.patch(`${Base_URL}blogs/${blog.id}`, blog, header)
+      .map(res => res.json())
+      .subscribe((updatedBlog) => {
+        console.log(updatedBlog);
+      });
+  }
   filterByCategory(categoryId) {
     this.filterByCategoryId = categoryId;
     this.filterByCategoryNotifier.emit(this.filterByCategoryId);
