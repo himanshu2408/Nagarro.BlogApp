@@ -10,6 +10,7 @@ export class NavbarComponent implements OnInit {
 
   @Input() categories;
   @Output() filterByCategoryNotify: EventEmitter<Object> = new EventEmitter<Object>();
+  categoryId = null;
   constructor(private auth: AuthenticationService) { }
 
   ngOnInit() {
@@ -21,6 +22,7 @@ export class NavbarComponent implements OnInit {
     return this.auth.isLoggedIn();
   }
   filterByCategories(categoryId) {
+    this.categoryId = categoryId;
     this.filterByCategoryNotify.emit(categoryId);
   }
 }

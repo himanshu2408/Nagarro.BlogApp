@@ -37,8 +37,6 @@ export class EditBlogComponent implements OnInit, DoCheck {
   ngOnInit() {
     this.blogService.select.subscribe((selectedBlog) => {
       this.blog = selectedBlog;
-      this.category.nativeElement.value = this.blog.categoryId;
-      console.log('cat val: ', this.category.nativeElement.value);
     });
   }
   ngDoCheck() {

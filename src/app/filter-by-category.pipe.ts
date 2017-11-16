@@ -15,10 +15,10 @@ export class FilterByCategoryPipe implements PipeTransform {
     }
     if (categoryId === -1) {
       return blogs.filter(blog => blog['authorName'] == JSON.parse(localStorage.getItem('user')).username);
-    }
+    }     // my blogs
     if (categoryId === -2) {
       return blogs.filter(blog => JSON.parse(localStorage.getItem('user')).favourites.includes(blog['id']));
-    }
+    }     // favourite blogs
     return blogs.filter( blog => blog['categoryId'] === categoryId);
   }
 
