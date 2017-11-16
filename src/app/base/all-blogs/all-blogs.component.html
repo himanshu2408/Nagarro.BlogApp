@@ -4,7 +4,11 @@
     <div class="card blue-grey darken-1">
       <div class="card-content white-text">
 
-        <span class="card-title">{{blog.title}}</span>
+        <span class="card-title">
+          {{blog.title}}
+          <small class="right">~ by {{blog.authorName}}</small>
+        </span>
+
         <!-- horizontal fab -->
        <!-- <div class="fixed-action-btn horizontal">
           <a class="btn-floating btn-small teal">
@@ -23,10 +27,12 @@
       </div>
 
       <div class="card-action">
-        <a href="#">This is a link</a>
-        <a href="#">This is a link</a>
-        <a class="btn-floating btn-tiny waves-effect waves-light teal" (click)="selectBlog(blog)"><i class="material-icons">edit</i></a>
-        <a class="btn-floating btn-tiny waves-effect waves-light teal" (click)="deleteBlog(blog)"><i class="material-icons">delete_forever</i></a>
+        <!--<a href="#">This is a link</a>-->
+        <small class="white-text">~ {{blog.date | date}}</small>
+        <div style="display: inline" *ngIf="isLoggedIn() && postedByUser(blog)">
+          <a class="btn-floating btn-tiny waves-effect waves-light teal" (click)="selectBlog(blog)"><i class="material-icons">edit</i></a>
+          <a class="btn-floating btn-tiny waves-effect waves-light teal" (click)="deleteBlog(blog)"><i class="material-icons">delete_forever</i></a>
+        </div>
       </div>
     </div>
   </div>

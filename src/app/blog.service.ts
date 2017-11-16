@@ -11,6 +11,7 @@ interface Blog {
   title: string;
   desc: string;
   authorId: number;
+  authorName: string;
   categoryId: number;
   date: string;
 }

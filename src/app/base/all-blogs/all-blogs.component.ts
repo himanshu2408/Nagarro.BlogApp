@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {BlogService} from '../../blog.service';
+import {AuthenticationService} from '../../authentication.service';
 
 @Component({
   selector: 'app-all-blogs',
@@ -11,12 +12,11 @@ export class AllBlogsComponent implements OnInit {
   @Input() blogs;
   @Output() notify: EventEmitter<Object> = new EventEmitter<Object>();
   filterByCategoryId: number = null;
-  constructor(private blogService: BlogService) { }
+  constructor(private blogService: BlogService,  private auth: AuthenticationService) { }
 
   ngOnInit() {
     this.blogService.filterByCategoryNotifier.subscribe((categoryId) => {
       this.filterByCategoryId = categoryId;
-      console.log('in all blogs: ' + this.filterByCategoryId);
     });
   }
   selectBlog(blog) {
@@ -24,5 +24,11 @@ export class AllBlogsComponent implements OnInit {
   }
   deleteBlog(blog) {
     this.blogService.deleteBlog(blog);
+  }
+  isLoggedIn(): Boolean {
+    return this.auth.loggedInUser;
+  }
+  postedByUser(blog): Boolean{
+    return (blog.authorId == this.auth.loggedInUser.id && blog.authorName == this.auth.loggedInUser.username);
   }
 }

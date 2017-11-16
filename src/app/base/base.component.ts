@@ -21,7 +21,7 @@ export class BaseComponent implements OnInit {
     this.blogService.loadCategories()
       .subscribe((categories) => {
         this.blogService.categories = categories;
-        console.log(this.blogService.categories);
+        //console.log(this.blogService.categories);
       });
   }
 

@@ -7,6 +7,7 @@ interface Blog {
   title: string;
   desc: string;
   authorId: number;
+  authorName: string;
   categoryId: number;
   date: string;
 }
@@ -24,6 +25,7 @@ export class EditBlogComponent implements OnInit, DoCheck {
     title: null,
     desc: null,
     authorId: null,
+    authorName: null,
     categoryId: null,
     date: null
   };
@@ -51,13 +53,16 @@ export class EditBlogComponent implements OnInit, DoCheck {
   }
   addBlog(blog) {
     blog.categoryId = Number(this.category.nativeElement.value);
+    blog.date = new Date().toDateString();
+    if (this.auth.loggedInUser) {
+      blog.authorId = this.auth.loggedInUser.id;
+      blog.authorName = this.auth.loggedInUser.authorName;
+    }
     this.blogService.addBlog(blog);
   }
   editBlog(blog) {
     blog.categoryId = Number(this.category.nativeElement.value);
-    if (localStorage.getItem('user')) {
-      blog.authorId = JSON.parse(localStorage.getItem('user')).authorId;
-    }
+    blog.date = new Date().toDateString();
     this.blogService.editBlog(blog);
   }
   resetForm() {
