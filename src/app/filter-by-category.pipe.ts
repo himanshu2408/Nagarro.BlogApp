@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filterByCategory'
+  name: 'filterByCategory',
+  pure: false
 })
 export class FilterByCategoryPipe implements PipeTransform {
 
@@ -14,6 +15,9 @@ export class FilterByCategoryPipe implements PipeTransform {
     }
     if (categoryId === -1) {
       return blogs.filter(blog => blog['authorName'] == JSON.parse(localStorage.getItem('user')).username);
+    }
+    if (categoryId === -2) {
+      return blogs.filter(blog => JSON.parse(localStorage.getItem('user')).favourites.includes(blog['id']));
     }
     return blogs.filter( blog => blog['categoryId'] === categoryId);
   }
