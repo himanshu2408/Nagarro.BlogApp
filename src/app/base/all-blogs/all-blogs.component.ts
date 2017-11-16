@@ -12,8 +12,14 @@ export class AllBlogsComponent implements OnInit {
   @Input() blogs;
   @Output() notify: EventEmitter<Object> = new EventEmitter<Object>();
   filterByCategoryId: number = null;
-  userFavourites: number[] = this.auth.loggedInUser.favourites;
-  constructor(private blogService: BlogService,  private auth: AuthenticationService) { }
+  userFavourites: number[];
+  constructor(private blogService: BlogService,  private auth: AuthenticationService) {
+    if (this.auth.loggedInUser) {
+      this.userFavourites = this.auth.loggedInUser.favourites;
+    } else {
+      this.userFavourites = [];
+    }
+  }
 
   ngOnInit() {
     this.blogService.filterByCategoryNotifier.subscribe((categoryId) => {
@@ -34,12 +40,17 @@ export class AllBlogsComponent implements OnInit {
   }
   markAsFavourite(blogId) {
     this.blogService.markAsFavourite(blogId)
-      .subscribe((updatedFavourites) => {
-        console.log(updatedFavourites);
+      .subscribe((updatedUser) => {
+        localStorage.setItem('user', JSON.stringify(updatedUser));
+        console.log(updatedUser);
       });
   }
   markAsUnfavourite(blogId) {
-
+    this.blogService.markAsUnfavourite(blogId)
+      .subscribe((updatedUser) => {
+        localStorage.setItem('user', JSON.stringify(updatedUser));
+        console.log(updatedUser);
+      });
   }
   isFavourite(blogId) {
     return this.userFavourites.includes(blogId);

@@ -14,12 +14,7 @@ interface User {
 }
 @Injectable()
 export class AuthenticationService {
-  loggedInUser: User = {
-    id: null,
-    username: null,
-    password: null,
-    favourites: null
-  };
+  loggedInUser = null;
   constructor(private http: Http, private router: Router) {
     if (localStorage.getItem('user') != null) {
       this.loggedInUser = JSON.parse(localStorage.getItem('user'));
@@ -35,7 +30,7 @@ export class AuthenticationService {
     this.router.navigate(['']);
   }
   isLoggedIn(): Boolean {
-    if (this.loggedInUser.id) {
+    if (this.loggedInUser && this.loggedInUser.id) {
       return true;
     } else {
       return false;

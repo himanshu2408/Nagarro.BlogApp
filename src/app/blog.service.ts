@@ -73,6 +73,12 @@ export class BlogService {
       .map(res => res.json());
   }
   markAsUnfavourite(blogId: number) {
+    const index = this.auth.loggedInUser.favourites.includes(blogId);
+    if (index > -1 ) {
+      this.auth.loggedInUser.favourites.splice(index, 1);
+    }
+    return this.http.patch(`${Base_URL}users/${this.auth.loggedInUser.id}`, this.auth.loggedInUser,  header)
+      .map(res => res.json());
 
   }
   filterByCategory(categoryId: number) {

@@ -116,7 +116,8 @@
       "username": "admin",
       "password": "admin",
       "favourites": [
-        2
+        2,
+        4
       ]
     },
     {
