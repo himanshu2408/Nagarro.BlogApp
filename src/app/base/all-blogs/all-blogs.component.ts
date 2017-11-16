@@ -12,6 +12,7 @@ export class AllBlogsComponent implements OnInit {
   @Input() blogs;
   @Output() notify: EventEmitter<Object> = new EventEmitter<Object>();
   filterByCategoryId: number = null;
+  userFavourites: number[] = this.auth.loggedInUser.favourites;
   constructor(private blogService: BlogService,  private auth: AuthenticationService) { }
 
   ngOnInit() {
@@ -26,9 +27,21 @@ export class AllBlogsComponent implements OnInit {
     this.blogService.deleteBlog(blog);
   }
   isLoggedIn(): Boolean {
-    return this.auth.loggedInUser;
+    return this.auth.isLoggedIn();
   }
-  postedByUser(blog): Boolean{
+  isPostedByUser(blog): Boolean {
     return (blog.authorId == this.auth.loggedInUser.id && blog.authorName == this.auth.loggedInUser.username);
+  }
+  markAsFavourite(blogId) {
+    this.blogService.markAsFavourite(blogId)
+      .subscribe((updatedFavourites) => {
+        console.log(updatedFavourites);
+      });
+  }
+  markAsUnfavourite(blogId) {
+
+  }
+  isFavourite(blogId) {
+    return this.userFavourites.includes(blogId);
   }
 }

@@ -115,7 +115,9 @@
       "id": 2,
       "username": "admin",
       "password": "admin",
-      "favourites": []
+      "favourites": [
+        2
+      ]
     },
     {
       "id": 3,

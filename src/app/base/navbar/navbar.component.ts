@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
     this.auth.logout();
   }
   loggedIn(): Boolean {
-    return this.auth.loggedInUser;
+    return this.auth.isLoggedIn();
   }
   filterByCategories(categoryId) {
     this.filterByCategoryNotify.emit(categoryId);

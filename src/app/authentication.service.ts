@@ -6,10 +6,20 @@ const Base_URL = 'http://localhost:3000/';
 const header = {
   headers: new Headers({'content-type': 'application/json'})
 };
-
+interface User {
+  id: number;
+  username: string;
+  password: string;
+  favourites: number[];
+}
 @Injectable()
 export class AuthenticationService {
-  loggedInUser = null;
+  loggedInUser: User = {
+    id: null,
+    username: null,
+    password: null,
+    favourites: null
+  };
   constructor(private http: Http, private router: Router) {
     if (localStorage.getItem('user') != null) {
       this.loggedInUser = JSON.parse(localStorage.getItem('user'));
@@ -23,5 +33,12 @@ export class AuthenticationService {
     this.loggedInUser = null;
     localStorage.removeItem('user');
     this.router.navigate(['']);
+  }
+  isLoggedIn(): Boolean {
+    if (this.loggedInUser.id) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

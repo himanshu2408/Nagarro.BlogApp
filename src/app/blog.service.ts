@@ -1,6 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
+import {AuthenticationService} from './authentication.service';
 
 const Base_URL = 'http://localhost:3000/';
 const header = {
@@ -24,7 +25,7 @@ export class BlogService {
   filterByCategoryId: number = null;
   select: EventEmitter<Object> = new EventEmitter<Object>();
   filterByCategoryNotifier: EventEmitter<number> = new EventEmitter<number>();
-  constructor(private http: Http) { }
+  constructor(private http: Http, private auth: AuthenticationService) { }
   loadCategories() {
     return this.http.get(`${Base_URL}categories`)
       .map(res => res.json());
@@ -66,7 +67,15 @@ export class BlogService {
         }
       }));
   }
-  filterByCategory(categoryId) {
+  markAsFavourite(blogId: number) {
+    this.auth.loggedInUser.favourites.push(blogId);
+    return this.http.patch(`${Base_URL}users/${this.auth.loggedInUser.id}`, this.auth.loggedInUser,  header)
+      .map(res => res.json());
+  }
+  markAsUnfavourite(blogId: number) {
+
+  }
+  filterByCategory(categoryId: number) {
     this.filterByCategoryId = categoryId;
     this.filterByCategoryNotifier.emit(this.filterByCategoryId);
   }
