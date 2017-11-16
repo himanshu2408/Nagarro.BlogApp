@@ -56,7 +56,7 @@ export class EditBlogComponent implements OnInit, DoCheck {
     blog.date = new Date().toDateString();
     if (this.auth.loggedInUser) {
       blog.authorId = this.auth.loggedInUser.id;
-      blog.authorName = this.auth.loggedInUser.authorName;
+      blog.authorName = this.auth.loggedInUser.username;
     }
     this.blogService.addBlog(blog);
   }

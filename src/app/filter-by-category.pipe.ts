@@ -12,6 +12,9 @@ export class FilterByCategoryPipe implements PipeTransform {
     if (!categoryId) {
       return blogs;
     }
+    if (categoryId === -1) {
+      return blogs.filter(blog => blog['authorName'] == JSON.parse(localStorage.getItem('user')).username);
+    }
     return blogs.filter( blog => blog['categoryId'] === categoryId);
   }
 
