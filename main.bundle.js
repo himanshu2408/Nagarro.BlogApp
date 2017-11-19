@@ -188,7 +188,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var Base_URL = 'http://localhost:3000/';
+var Base_URL = 'http://127.0.0.1:3000/';
 var header = {
     headers: new Headers({ 'content-type': 'application/json' })
 };
@@ -1002,7 +1002,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var Base_URL = 'http://localhost:3000/';
+var Base_URL = 'http://127.0.0.1:3000/';
 var header = {
     headers: new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ 'content-type': 'application/json' })
 };
