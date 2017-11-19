@@ -17,7 +17,7 @@ export class BaseComponent implements OnInit {
   /*blogs: Object [];
   categories: Object [];
   selectedBlog = null;*/
-  constructor(public blogService: BlogService, private auth: AuthenticationService, private router: Router) {
+  constructor(protected blogService: BlogService, private auth: AuthenticationService, private router: Router) {
     this.blogService.loadCategories()
       .subscribe((categories) => {
         this.blogService.categories = categories;
