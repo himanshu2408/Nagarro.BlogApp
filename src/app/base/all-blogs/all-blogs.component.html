@@ -30,8 +30,8 @@
         <!--<a href="#">This is a link</a>-->
         <small class="white-text">~ {{blog.date | date}}</small>
         <span>
-          <a class="btn-floating btn-tiny waves-effect waves-light teal" (click)="markAsFavourite(blog.id)" *ngIf="!isFavourite(blog.id)"><i class="material-icons">star_border</i></a>
-          <a class="btn-floating btn-tiny waves-effect waves-light teal" (click)="markAsUnfavourite(blog.id)" *ngIf="isFavourite(blog.id)"><i class="material-icons">star</i></a>
+          <a class="btn-floating btn-tiny waves-effect waves-light teal" (click)="markAsFavourite(blog.id)" *ngIf="!isFavourite(blog.id) && isLoggedIn()"><i class="material-icons">star_border</i></a>
+          <a class="btn-floating btn-tiny waves-effect waves-light teal" (click)="markAsUnfavourite(blog.id)" *ngIf="isFavourite(blog.id) && isLoggedIn()"><i class="material-icons">star</i></a>
           <a class="btn-floating btn-tiny waves-effect waves-light teal" (click)="selectBlog(blog)" *ngIf="isLoggedIn() && isPostedByUser(blog)"><i class="material-icons">edit</i></a>
           <a class="btn-floating btn-tiny waves-effect waves-light teal" (click)="deleteBlog(blog)" *ngIf="isLoggedIn() && isPostedByUser(blog)"><i class="material-icons">delete_forever</i></a>
         </span>

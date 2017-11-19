@@ -13,6 +13,7 @@ export class AllBlogsComponent implements OnInit {
   @Output() notify: EventEmitter<Object> = new EventEmitter<Object>();
   filterByCategoryId: number = null;
   userFavourites: number[];
+  searchText = null;
   constructor(private blogService: BlogService,  private auth: AuthenticationService) {
     if (this.auth.loggedInUser) {
       this.userFavourites = this.auth.loggedInUser.favourites;

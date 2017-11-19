@@ -4,16 +4,16 @@
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li [ngClass]="{'active': categoryId == null}" (click)="filterByCategories(null)"><a>All Blogs</a></li>
-      <li [ngClass]="{'active': categoryId == -1}" (click)="filterByCategories(-1)"><a>My Blogs</a></li>
-      <li [ngClass]="{'active': categoryId == -2}" (click)="filterByCategories(-2)"><a>Favourites</a></li>
+      <li [ngClass]="{'active': categoryId == -1}" (click)="filterByCategories(-1)" *ngIf="loggedIn()"><a>My Blogs</a></li>
+      <li [ngClass]="{'active': categoryId == -2}" (click)="filterByCategories(-2)" *ngIf="loggedIn()"><a>Favourites</a></li>
       <li [ngClass]="{'active': categoryId == category.id}" *ngFor="let category of categories" (click)="filterByCategories(category.id)"><a>{{category.name}}</a></li>
       <li *ngIf="loggedIn()"><a (click)="logout()">Logout</a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
-      <li (click)="filterByCategories(null)"><a>All Blogs</a></li>
-      <li (click)="filterByCategories(-1)"><a>My Blogs</a></li>
-      <li (click)="filterByCategories(-2)"><a>Favourites</a></li>
-      <li *ngFor="let category of categories" (click)="filterByCategories(category.id)"><a>{{category.name}}</a></li>
+      <li [ngClass]="{'active': categoryId == null}" (click)="filterByCategories(null)"><a>All Blogs</a></li>
+      <li [ngClass]="{'active': categoryId == -1}" (click)="filterByCategories(-1)" *ngIf="loggedIn()"><a>My Blogs</a></li>
+      <li [ngClass]="{'active': categoryId == -2}" (click)="filterByCategories(-2)" *ngIf="loggedIn()"><a>Favourites</a></li>
+      <li [ngClass]="{'active': categoryId == category.id}" *ngFor="let category of categories" (click)="filterByCategories(category.id)"><a>{{category.name}}</a></li>
       <li *ngIf="loggedIn()"><a class="waves-effect waves-light btn center" (click)="logout()">Logout</a></li>
     </ul>
 
